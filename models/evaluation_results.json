@@ -1,0 +1,568 @@
+{
+  "experiment_name": "D1 + D15 + D19 (Cross-Configuration Domain Shift)",
+  "datasets_used": [
+    1,
+    15,
+    19
+  ],
+  "selected_model": "Random Forest",
+  "selection_rationale": "Selected **Random Forest** based on Leave-One-Dataset-Out (LODO) cross-validation prioritizing MCC (0.462), F1-Score (0.645), and Chatter Recall (0.856) rather than raw accuracy alone\u2014minimizing undetected chatter (false negatives) on unseen machining configurations.",
+  "lodo": {
+    "folds": [
+      {
+        "Model": "Logistic Regression",
+        "Fold": 1,
+        "Train Datasets": [
+          15,
+          19
+        ],
+        "Test Dataset": 1,
+        "Test Samples": 102,
+        "Accuracy": 0.6862745098039216,
+        "Balanced Accuracy": 0.6226190476190476,
+        "Precision": 0.9166666666666666,
+        "Recall": 0.2619047619047619,
+        "F1": 0.4074074074074074,
+        "MCC": 0.3746073782384536,
+        "Confusion Matrix": [
+          [
+            59,
+            1
+          ],
+          [
+            31,
+            11
+          ]
+        ]
+      },
+      {
+        "Model": "Logistic Regression",
+        "Fold": 2,
+        "Train Datasets": [
+          1,
+          19
+        ],
+        "Test Dataset": 15,
+        "Test Samples": 125,
+        "Accuracy": 0.32,
+        "Balanced Accuracy": 0.5,
+        "Precision": 0.32,
+        "Recall": 1.0,
+        "F1": 0.48484848484848486,
+        "MCC": 0.0,
+        "Confusion Matrix": [
+          [
+            0,
+            85
+          ],
+          [
+            0,
+            40
+          ]
+        ]
+      },
+      {
+        "Model": "Logistic Regression",
+        "Fold": 3,
+        "Train Datasets": [
+          1,
+          15
+        ],
+        "Test Dataset": 19,
+        "Test Samples": 400,
+        "Accuracy": 0.2725,
+        "Balanced Accuracy": 0.5,
+        "Precision": 0.2725,
+        "Recall": 1.0,
+        "F1": 0.42829076620825146,
+        "MCC": 0.0,
+        "Confusion Matrix": [
+          [
+            0,
+            291
+          ],
+          [
+            0,
+            109
+          ]
+        ]
+      },
+      {
+        "Model": "Decision Tree",
+        "Fold": 1,
+        "Train Datasets": [
+          15,
+          19
+        ],
+        "Test Dataset": 1,
+        "Test Samples": 102,
+        "Accuracy": 0.8333333333333334,
+        "Balanced Accuracy": 0.8226190476190476,
+        "Precision": 0.8205128205128205,
+        "Recall": 0.7619047619047619,
+        "F1": 0.7901234567901234,
+        "MCC": 0.6534580201896991,
+        "Confusion Matrix": [
+          [
+            53,
+            7
+          ],
+          [
+            10,
+            32
+          ]
+        ]
+      },
+      {
+        "Model": "Decision Tree",
+        "Fold": 2,
+        "Train Datasets": [
+          1,
+          19
+        ],
+        "Test Dataset": 15,
+        "Test Samples": 125,
+        "Accuracy": 0.6,
+        "Balanced Accuracy": 0.6397058823529411,
+        "Precision": 0.42857142857142855,
+        "Recall": 0.75,
+        "F1": 0.5454545454545454,
+        "MCC": 0.2625752465908215,
+        "Confusion Matrix": [
+          [
+            45,
+            40
+          ],
+          [
+            10,
+            30
+          ]
+        ]
+      },
+      {
+        "Model": "Decision Tree",
+        "Fold": 3,
+        "Train Datasets": [
+          1,
+          15
+        ],
+        "Test Dataset": 19,
+        "Test Samples": 400,
+        "Accuracy": 0.4475,
+        "Balanced Accuracy": 0.6174059711844636,
+        "Precision": 0.32926829268292684,
+        "Recall": 0.9908256880733946,
+        "F1": 0.494279176201373,
+        "MCC": 0.2721302085179671,
+        "Confusion Matrix": [
+          [
+            71,
+            220
+          ],
+          [
+            1,
+            108
+          ]
+        ]
+      },
+      {
+        "Model": "Random Forest",
+        "Fold": 1,
+        "Train Datasets": [
+          15,
+          19
+        ],
+        "Test Dataset": 1,
+        "Test Samples": 102,
+        "Accuracy": 0.8431372549019608,
+        "Balanced Accuracy": 0.8309523809523809,
+        "Precision": 0.8421052631578947,
+        "Recall": 0.7619047619047619,
+        "F1": 0.8,
+        "MCC": 0.6737736004487368,
+        "Confusion Matrix": [
+          [
+            54,
+            6
+          ],
+          [
+            10,
+            32
+          ]
+        ]
+      },
+      {
+        "Model": "Random Forest",
+        "Fold": 2,
+        "Train Datasets": [
+          1,
+          19
+        ],
+        "Test Dataset": 15,
+        "Test Samples": 125,
+        "Accuracy": 0.688,
+        "Balanced Accuracy": 0.7242647058823529,
+        "Precision": 0.5076923076923077,
+        "Recall": 0.825,
+        "F1": 0.6285714285714286,
+        "MCC": 0.4187917152405809,
+        "Confusion Matrix": [
+          [
+            53,
+            32
+          ],
+          [
+            7,
+            33
+          ]
+        ]
+      },
+      {
+        "Model": "Random Forest",
+        "Fold": 3,
+        "Train Datasets": [
+          1,
+          15
+        ],
+        "Test Dataset": 19,
+        "Test Samples": 400,
+        "Accuracy": 0.4775,
+        "Balanced Accuracy": 0.635155584980611,
+        "Precision": 0.34076433121019106,
+        "Recall": 0.981651376146789,
+        "F1": 0.5059101654846335,
+        "MCC": 0.29296091680002667,
+        "Confusion Matrix": [
+          [
+            84,
+            207
+          ],
+          [
+            2,
+            107
+          ]
+        ]
+      }
+    ],
+    "summary": [
+      {
+        "Model": "Logistic Regression",
+        "Accuracy": 0.42625816993464055,
+        "Balanced Accuracy": 0.5408730158730158,
+        "Precision": 0.5030555555555555,
+        "Recall": 0.753968253968254,
+        "F1": 0.440182219488048,
+        "MCC": 0.12486912607948453,
+        "Pooled_OOF_Accuracy": 0.3492822966507177,
+        "Pooled_OOF_F1": 0.43956043956043955,
+        "Pooled_OOF_MCC": -0.03541887368653851
+      },
+      {
+        "Model": "Decision Tree",
+        "Accuracy": 0.6269444444444444,
+        "Balanced Accuracy": 0.6932436337188174,
+        "Precision": 0.526117513922392,
+        "Recall": 0.8342434833260522,
+        "F1": 0.6099523928153473,
+        "MCC": 0.3960544917661626,
+        "Pooled_OOF_Accuracy": 0.5406698564593302,
+        "Pooled_OOF_F1": 0.5414012738853503,
+        "Pooled_OOF_MCC": 0.27807806449574607
+      },
+      {
+        "Model": "Random Forest",
+        "Accuracy": 0.6695457516339869,
+        "Balanced Accuracy": 0.7301242239384482,
+        "Precision": 0.5635206340201312,
+        "Recall": 0.8561853793505169,
+        "F1": 0.6448271980186874,
+        "MCC": 0.4618420774964482,
+        "Pooled_OOF_Accuracy": 0.5789473684210527,
+        "Pooled_OOF_F1": 0.5657894736842105,
+        "Pooled_OOF_MCC": 0.330191052965404
+      }
+    ],
+    "aggregate_confusion_matrices": {
+      "Logistic Regression": [
+        [
+          59,
+          377
+        ],
+        [
+          31,
+          160
+        ]
+      ],
+      "Decision Tree": [
+        [
+          169,
+          267
+        ],
+        [
+          21,
+          170
+        ]
+      ],
+      "Random Forest": [
+        [
+          191,
+          245
+        ],
+        [
+          19,
+          172
+        ]
+      ]
+    },
+    "aggregate_classification_reports": {
+      "Logistic Regression": {
+        "Stable (0)": {
+          "precision": 0.6555555555555556,
+          "recall": 0.1353211009174312,
+          "f1-score": 0.22433460076045628,
+          "support": 436.0
+        },
+        "Chatter (1)": {
+          "precision": 0.297951582867784,
+          "recall": 0.837696335078534,
+          "f1-score": 0.43956043956043955,
+          "support": 191.0
+        },
+        "accuracy": 0.3492822966507177,
+        "macro avg": {
+          "precision": 0.4767535692116698,
+          "recall": 0.4865087179979826,
+          "f1-score": 0.33194752016044793,
+          "support": 627.0
+        },
+        "weighted avg": {
+          "precision": 0.5466203740828852,
+          "recall": 0.3492822966507177,
+          "f1-score": 0.28989781481276383,
+          "support": 627.0
+        }
+      },
+      "Decision Tree": {
+        "Stable (0)": {
+          "precision": 0.8894736842105263,
+          "recall": 0.3876146788990826,
+          "f1-score": 0.5399361022364217,
+          "support": 436.0
+        },
+        "Chatter (1)": {
+          "precision": 0.3890160183066362,
+          "recall": 0.8900523560209425,
+          "f1-score": 0.5414012738853503,
+          "support": 191.0
+        },
+        "accuracy": 0.5406698564593302,
+        "macro avg": {
+          "precision": 0.6392448512585812,
+          "recall": 0.6388335174600125,
+          "f1-score": 0.540668688060886,
+          "support": 627.0
+        },
+        "weighted avg": {
+          "precision": 0.7370216679622917,
+          "recall": 0.5406698564593302,
+          "f1-score": 0.5403824304420762,
+          "support": 627.0
+        }
+      },
+      "Random Forest": {
+        "Stable (0)": {
+          "precision": 0.9095238095238095,
+          "recall": 0.4380733944954128,
+          "f1-score": 0.5913312693498453,
+          "support": 436.0
+        },
+        "Chatter (1)": {
+          "precision": 0.41247002398081534,
+          "recall": 0.900523560209424,
+          "f1-score": 0.5657894736842105,
+          "support": 191.0
+        },
+        "accuracy": 0.5789473684210527,
+        "macro avg": {
+          "precision": 0.6609969167523124,
+          "recall": 0.6692984773524184,
+          "f1-score": 0.5785603715170279,
+          "support": 627.0
+        },
+        "weighted avg": {
+          "precision": 0.7581087010091174,
+          "recall": 0.5789473684210527,
+          "f1-score": 0.5835505947531368,
+          "support": 627.0
+        }
+      }
+    }
+  },
+  "grouped_kfold": {
+    "n_splits": 5,
+    "summary": [
+      {
+        "Model": "Logistic Regression",
+        "Accuracy": 0.5710222222222223,
+        "Balanced Accuracy": 0.5840048714141274,
+        "Precision": 0.37922562573416463,
+        "Recall": 0.6174089068825911,
+        "F1": 0.46838106112922084,
+        "MCC": 0.15611254448501058
+      },
+      {
+        "Model": "Decision Tree",
+        "Accuracy": 0.7528126984126984,
+        "Balanced Accuracy": 0.7455790277478118,
+        "Precision": 0.5775741322169894,
+        "Recall": 0.7272604588394062,
+        "F1": 0.6434853125412637,
+        "MCC": 0.46571782996028954
+      },
+      {
+        "Model": "Random Forest",
+        "Accuracy": 0.7941968253968253,
+        "Balanced Accuracy": 0.7887403280325241,
+        "Precision": 0.6318569981183964,
+        "Recall": 0.7747638326585695,
+        "F1": 0.6955281695677469,
+        "MCC": 0.5495727825526882
+      }
+    ],
+    "aggregate_confusion_matrices": {
+      "Logistic Regression": [
+        [
+          240,
+          196
+        ],
+        [
+          73,
+          118
+        ]
+      ],
+      "Decision Tree": [
+        [
+          333,
+          103
+        ],
+        [
+          52,
+          139
+        ]
+      ],
+      "Random Forest": [
+        [
+          350,
+          86
+        ],
+        [
+          43,
+          148
+        ]
+      ]
+    },
+    "aggregate_classification_reports": {
+      "Logistic Regression": {
+        "Stable (0)": {
+          "precision": 0.7667731629392971,
+          "recall": 0.5504587155963303,
+          "f1-score": 0.6408544726301736,
+          "support": 436.0
+        },
+        "Chatter (1)": {
+          "precision": 0.37579617834394907,
+          "recall": 0.6178010471204188,
+          "f1-score": 0.46732673267326735,
+          "support": 191.0
+        },
+        "accuracy": 0.5709728867623605,
+        "macro avg": {
+          "precision": 0.571284670641623,
+          "recall": 0.5841298813583746,
+          "f1-score": 0.5540906026517205,
+          "support": 627.0
+        },
+        "weighted avg": {
+          "precision": 0.6476717210609694,
+          "recall": 0.5709728867623605,
+          "f1-score": 0.5879935502509566,
+          "support": 627.0
+        }
+      },
+      "Decision Tree": {
+        "Stable (0)": {
+          "precision": 0.8649350649350649,
+          "recall": 0.7637614678899083,
+          "f1-score": 0.8112058465286236,
+          "support": 436.0
+        },
+        "Chatter (1)": {
+          "precision": 0.5743801652892562,
+          "recall": 0.7277486910994765,
+          "f1-score": 0.6420323325635104,
+          "support": 191.0
+        },
+        "accuracy": 0.7527910685805422,
+        "macro avg": {
+          "precision": 0.7196576151121605,
+          "recall": 0.7457550794946923,
+          "f1-score": 0.726619089546067,
+          "support": 627.0
+        },
+        "weighted avg": {
+          "precision": 0.7764247207048425,
+          "recall": 0.7527910685805422,
+          "f1-score": 0.7596713311102239,
+          "support": 627.0
+        }
+      },
+      "Random Forest": {
+        "Stable (0)": {
+          "precision": 0.8905852417302799,
+          "recall": 0.8027522935779816,
+          "f1-score": 0.8443908323281062,
+          "support": 436.0
+        },
+        "Chatter (1)": {
+          "precision": 0.6324786324786325,
+          "recall": 0.774869109947644,
+          "f1-score": 0.6964705882352941,
+          "support": 191.0
+        },
+        "accuracy": 0.7942583732057417,
+        "macro avg": {
+          "precision": 0.7615319371044562,
+          "recall": 0.7888107017628128,
+          "f1-score": 0.7704307102817001,
+          "support": 627.0
+        },
+        "weighted avg": {
+          "precision": 0.8119594644303363,
+          "recall": 0.7942583732057417,
+          "f1-score": 0.7993305984816514,
+          "support": 627.0
+        }
+      }
+    }
+  },
+  "feature_importances": {
+    "Logistic Regression": {
+      "RMS": 0.37741837769458025,
+      "Peak-to-Peak": 0.1191985496675107,
+      "Max FFT": 0.45252154339041345,
+      "Dominant Frequency": 0.05086152924730669
+    },
+    "Decision Tree": {
+      "RMS": 0.24080360795119227,
+      "Peak-to-Peak": 0.026195427361378826,
+      "Max FFT": 0.1430058235611888,
+      "Dominant Frequency": 0.58999514112624
+    },
+    "Random Forest": {
+      "RMS": 0.23903035848736864,
+      "Peak-to-Peak": 0.14453568322256743,
+      "Max FFT": 0.2455254020791059,
+      "Dominant Frequency": 0.370908556210958
+    }
+  }
+}

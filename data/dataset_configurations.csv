@@ -1,0 +1,8 @@
+Dataset,Research Role,fntx (Hz),ktx (N/m),zetatx,fnty (Hz),kty (N/m),zetaty,ktc (N/m2),knc (N/m2),d (m),m,beta (deg),Milling Direction,a (m),omega min (rpm),omega max (rpm),omega increment (rpm),b min (m),b increment (m),Noise std (%)
+1,Baseline Reference (Active),500,5000000,0.03,500,5000000,0.03,700000000,210000000,0.0127,4,30,Down Milling,0.003175,2000,12000,500,0.001,0.001,0
+2,Up-Milling Variant (Identical SLD to D1),500,5000000,0.03,500,5000000,0.03,700000000,210000000,0.0127,4,30,Up Milling,0.003175,2000,12000,500,0.001,0.001,0
+3,1000 Hz Dynamics (Initial Benchmark),1000,5000000,0.03,1000,5000000,0.03,700000000,210000000,0.0127,4,30,Down Milling,0.003175,2000,20000,500,0.001,0.001,0
+15,Cutting Mechanics & 45 deg Helix Shift (Active),500,5000000,0.03,500,5000000,0.03,2000000000,600000000,0.0127,4,45,Down Milling,0.003175,2000,12000,500,0.00025,0.00025,0
+19,1500 Hz / 10 MN/m Structural Shift (Active),1500,10000000,0.02,1500,10000000,0.02,700000000,210000000,0.0127,4,30,Down Milling,0.003175,2000,30000,500,0.001,0.001,0
+61,D1 + 1% Noise Duplicate (Excluded),500,5000000,0.03,500,5000000,0.03,700000000,210000000,0.0127,4,30,Down Milling,0.003175,2000,12000,500,0.001,0.001,1
+91,D1 + 5% Noise Duplicate (Excluded),500,5000000,0.03,500,5000000,0.03,700000000,210000000,0.0127,4,30,Down Milling,0.003175,2000,12000,500,0.001,0.001,5

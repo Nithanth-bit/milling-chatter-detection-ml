@@ -1,0 +1,44 @@
+{
+  "source": "JOURNAL.ipynb (Cells 1-427)",
+  "database": "Digital Machining Database for Machine Learning (Schmitz & Smith, Springer, 2019)",
+  "early_invalid_experiments": [
+    {
+      "stage": "Early Iteration 1 (Rejected)",
+      "datasets": "D1 + D61 + D91 (306 cuts)",
+      "labeling": "RMS > Median RMS (365.822 m/s^2)",
+      "validation": "Random 80/20 Train/Test Split",
+      "reported_accuracy": "LogReg: 79.0% (Omega+DOC) / 96.8% (All features)",
+      "flaw": "Target-proxy leakage (RMS used to define label) + noisy duplicates D61/D91 share identical labels with D1."
+    },
+    {
+      "stage": "Early Iteration 2 (Rejected)",
+      "datasets": "D1 + D2 + D3 (394 cuts: 234 Stable, 160 Chatter)",
+      "labeling": "Physics Stability Boundaries (Unnormalized FFT)",
+      "validation": "Early Split / Uncleaned Feature Pipeline",
+      "reported_accuracy": "~99% (inflated)",
+      "flaw": "D1 and D2 share identical stability boundaries; raw unnormalized FFT and split artifacts inflated generalization estimates."
+    }
+  ],
+  "journal_documented_d1_d15_d19_lodo": {
+    "note": "Exact values recorded in JOURNAL.ipynb Cells 400 and 404 (4 corrected vibration features, Random Forest LODO)",
+    "rf_mean_accuracy_pct": 68.4,
+    "per_dataset_approx_accuracy_pct": {
+      "Dataset 1": 80.0,
+      "Dataset 15": 76.0,
+      "Dataset 19": 49.0
+    },
+    "key_insight": "Holding out Dataset 19 (1500 Hz, 10 MN/m stiffness) drops accuracy to ~49%, exposing cross-machine domain shift when training only on 500 Hz configurations (D1, D15)."
+  },
+  "journal_documented_apples_to_apples_5fold": {
+    "note": "Exact values recorded in JOURNAL.ipynb Cell 423 (StratifiedGroupKFold, 5-fold grouped by Omega_Depth, identical 5 vibration features)",
+    "D1_D2_D3": {
+      "Decision Tree Accuracy (%)": 80.58,
+      "Random Forest Accuracy (%)": 80.72
+    },
+    "D1_D15_D19": {
+      "Decision Tree Accuracy (%)": 83.63,
+      "Random Forest Accuracy (%)": 82.57
+    },
+    "key_insight": "Under identical features and grouped CV, D1+D2+D3 and D1+D15+D19 yield comparable accuracy (~80.6%-83.6%), proving the earlier ~99% score stemmed from flawed setup rather than dataset choice alone."
+  }
+}

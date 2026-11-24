@@ -1,0 +1,104 @@
+{
+  "project_title": "Machine Learning-Based Chatter Detection in Milling Operations",
+  "experiment_name": "D1 + D15 + D19 (Cross-Configuration Domain Shift)",
+  "trained_at_utc": "2026-11-24T09:52:43+00:00",
+  "selected_model": "Random Forest",
+  "selection_rationale": "Selected **Random Forest** based on Leave-One-Dataset-Out (LODO) cross-validation prioritizing MCC (0.462), F1-Score (0.645), and Chatter Recall (0.856) rather than raw accuracy alone\u2014minimizing undetected chatter (false negatives) on unseen machining configurations.",
+  "feature_columns": [
+    "RMS",
+    "Peak-to-Peak",
+    "Max FFT",
+    "Dominant Frequency"
+  ],
+  "excluded_metadata_columns": [
+    "Dataset",
+    "Experiment",
+    "File",
+    "Omega",
+    "Depth",
+    "Critical Depth",
+    "Chatter"
+  ],
+  "datasets_used": [
+    1,
+    15,
+    19
+  ],
+  "dataset_counts": {
+    "1": 102,
+    "15": 125,
+    "19": 400
+  },
+  "total_experiments": 627,
+  "class_distribution": {
+    "stable_0": 436,
+    "chatter_1": 191
+  },
+  "selected_model_lodo_metrics": {
+    "Model": "Random Forest",
+    "Accuracy": 0.6695457516339869,
+    "Balanced Accuracy": 0.7301242239384482,
+    "Precision": 0.5635206340201312,
+    "Recall": 0.8561853793505169,
+    "F1": 0.6448271980186874,
+    "MCC": 0.4618420774964482,
+    "Pooled_OOF_Accuracy": 0.5789473684210527,
+    "Pooled_OOF_F1": 0.5657894736842105,
+    "Pooled_OOF_MCC": 0.330191052965404
+  },
+  "selected_model_grouped_cv_metrics": {
+    "Model": "Random Forest",
+    "Accuracy": 0.7941968253968253,
+    "Balanced Accuracy": 0.7887403280325241,
+    "Precision": 0.6318569981183964,
+    "Recall": 0.7747638326585695,
+    "F1": 0.6955281695677469,
+    "MCC": 0.5495727825526882
+  },
+  "class_feature_medians": {
+    "0": {
+      "RMS": 557.7196518572935,
+      "Peak-to-Peak": 2692.8326848434267,
+      "Max FFT": 750.7946387259437,
+      "Dominant Frequency": 1400.0
+    },
+    "1": {
+      "RMS": 1116.2420355749682,
+      "Peak-to-Peak": 4723.779283138989,
+      "Max FFT": 1550.3364740860577,
+      "Dominant Frequency": 1479.0277777777776
+    }
+  },
+  "feature_ranges": {
+    "RMS": {
+      "min": 8.842521018277342,
+      "median": 806.9635417008102,
+      "max": 11771.518550000086
+    },
+    "Peak-to-Peak": {
+      "min": 39.83426787975053,
+      "median": 3392.68280782681,
+      "max": 36246.778788588534
+    },
+    "Max FFT": {
+      "min": 1.3787936707915818,
+      "median": 1066.5871901779046,
+      "max": 17319.355522900856
+    },
+    "Dominant Frequency": {
+      "min": 300.0,
+      "median": 1400.0,
+      "max": 1999.9999999999998
+    }
+  },
+  "signal_processing": {
+    "channel": "xtacc (Column 11)",
+    "detrend": "Mean subtraction (DC offset removal)",
+    "window": "Hanning window",
+    "fft": "Single-sided rFFT normalized by 2 / sum(window), DC bin zeroed",
+    "frequency_axis": "True Hz via np.fft.rfftfreq(N, d=mean(diff(time)))",
+    "sampling_freq_min_hz": 12266.666666666666,
+    "sampling_freq_max_hz": 38333.33333333333
+  },
+  "data_source_disclaimer": "Trained exclusively on simulated milling time-series data from the Digital Machining Database (Schmitz & Smith, Springer, 2019). Not validated on live shop-floor CNC hardware."
+}
